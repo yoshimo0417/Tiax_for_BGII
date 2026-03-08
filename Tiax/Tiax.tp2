@@ -19,6 +19,9 @@ ALWAYS
   END
 
 
+  // No exception, everything needs to be converted
+  ACTION_DEFINE_ARRAY O#noconvert BEGIN Install END
+
   // Only setup-Tiax.tra needs to be reloaded
   ACTION_DEFINE_ARRAY O#reload BEGIN Setup-Tiax END
 
@@ -28,6 +31,7 @@ ALWAYS
       infer_charsets = 1
     STR_VAR
       tra_path = EVAL ~%MOD_FOLDER%~
+	  noconvert_array = O#noconvert
       reload_array = O#reload
   END
 END
@@ -37,6 +41,7 @@ AUTO_TRA ~Tiax/%s~
 LANGUAGE ~English~ ~English~ ~Tiax/English/Setup-Tiax.tra~
 LANGUAGE ~Russian~ ~Russian~ ~Tiax/Russian/Setup-Tiax.tra~
 LANGUAGE ~French (Translated by Eleima and Galathee)~  ~French~  ~Tiax/French/Setup-Tiax.tra~
+LANGUAGE ~Simplified Chinese (Translated by Yoshimo0417)~  ~Schinese~  ~Tiax/Schinese/Install.tra~
 
 BEGIN @0
 
